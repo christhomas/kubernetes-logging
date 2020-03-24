@@ -27,7 +27,7 @@ more than 3 months old is something I obviously don't care that much about.
 you need.
 
 If you want to adjust the number of days to withhold logs before deleting the old ones, look at the following lines
-in the `4-curator.yaml` file:
+in the "curator" yaml file:
 
 ```
 unit: days
