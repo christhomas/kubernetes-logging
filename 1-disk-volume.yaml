@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: elasticsearch-data
+  namespace: kube-logging
+  labels:
+    volume-name: elasticsearch-data
+spec:
+  accessModes: [ "ReadWriteOnce" ]
+  capacity:
+    storage: 20Gi
+  hostPath:
+    path: /mnt/kubernetes/elasticsearch-data
