@@ -15,6 +15,11 @@ spec:
     spec:
       template:
         spec:
+          tolerations:
+            - operator: "Exists"
+              effect: "NoSchedule"
+            - operator: "Exists"
+              effect: "NoExecute"
           containers:
             - image: bobrik/curator:5.8.1
               name: curator
@@ -60,7 +65,7 @@ data:
           direction: older
           timestring: '%Y.%m.%d'
           unit: days
-          unit_count: 90
+          unit_count: 30
           field:
           stats_result:
           epoch:

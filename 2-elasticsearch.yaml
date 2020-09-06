@@ -28,6 +28,11 @@ spec:
     spec:
       nodeSelector:
         kube-logging: "true"
+      tolerations:
+        - operator: "Exists"
+          effect: "NoSchedule"
+        - operator: "Exists"
+          effect: "NoExecute"
       initContainers:
         - name: fix-permissions
           image: busybox
@@ -49,7 +54,7 @@ spec:
             privileged: true
       containers:
         - name: elasticsearch
-          image: docker.elastic.co/elasticsearch/elasticsearch:7.0.0
+          image: docker.elastic.co/elasticsearch/elasticsearch:7.9.1
           ports:
             - containerPort: 9200
               name: rest
